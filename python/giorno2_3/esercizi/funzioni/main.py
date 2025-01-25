@@ -95,4 +95,3 @@ def count_vowels(string):
     return vowels_count
 
 
-print(factorial(5))
