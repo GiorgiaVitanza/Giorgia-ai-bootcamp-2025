@@ -3,6 +3,7 @@ class Country:
         self.name = name
         self.region = []
         
+        
     def add(self, reg):
         self.region.append(reg)
 
@@ -13,6 +14,24 @@ class Country:
         for reg in self.region:
             tot += reg.pop
         return tot
+    @property
+    def most_populuous_city(self):
+        """The most populous city"""
+        cities = []
+        for reg in self.region:
+            for el in reg.city:
+                cities.append(el)
+        data = []
+        for city in cities:
+            data.append(city.pop)
+
+              
+        for city in cities:
+            if city.pop == max(data):
+                res = city
+
+        
+        return res
             
 
 
