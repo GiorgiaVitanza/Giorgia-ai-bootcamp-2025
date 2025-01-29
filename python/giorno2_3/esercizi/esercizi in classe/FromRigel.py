@@ -23,7 +23,6 @@ assert len(my_list) == 1
 assert my_list.head.data == "Napoli"
 
 my_list.add_node(data="Milan")
-
 assert len(my_list) == 2
 
 # Check that we have two objects of type Node
