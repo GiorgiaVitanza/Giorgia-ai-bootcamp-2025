@@ -1,7 +1,7 @@
 class Node:
-    def __init__(self,data):
+    def __init__(self,data,next=None):
         self.data = data
-        self.next = None
+        self.next = next
     
 
 
@@ -10,23 +10,33 @@ class LinkedList:
         self.head = None
         self.length = 0
         
+        
+
     def __len__(self):
         return self.length
+
+    def __iter__(self):
+        return iter(self)
+    def __next__(self):
+        if self.length <= 0:
+            raise StopIteration  # Indica la fine dell'iterazione
+        self.length -= 1
+        
     
-    def add_node(self,data):   
-        if self.head is None:
-            # add the node head       
-            self.head = Node(data) 
-            # increase the length
-            self.length += 1   
-        else:
-            # add next node
-            self.head.next = Node(data)
-            # new head
-            self.head = Node(data)
-            # increase the length
-            self.length += 1  
-        return [self.head,self.head.next]
+    def add_node(self,data=""):  
+         new_node = Node(data)
+         if self.head is None:
+            self.head = new_node
+            self.length += 1
+         else:
+            new_node.next = self.head
+            self.head = new_node
+            self.length += 1
+        
+
+         return [new_node, new_node.next]
+        
+        
             
                 
         
