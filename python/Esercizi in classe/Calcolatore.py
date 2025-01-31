@@ -7,6 +7,9 @@ while True:
         num1, sign, num2 = text.split()
         if sign == "+":
             print(float(num1)+float(num2))
-        if sign == '-':
+        elif sign == '-':
             print(float(num1)-float(num2))
+        else:
+            print("operazione non riconosciuta")
+            continue
 
