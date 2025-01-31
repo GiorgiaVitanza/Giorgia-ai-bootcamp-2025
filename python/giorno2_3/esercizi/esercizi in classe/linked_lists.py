@@ -16,11 +16,8 @@ class LinkedList:
         return self.length
 
     def __iter__(self):
-        return iter(self)
-    def __next__(self):
-        if self.length <= 0:
-            raise StopIteration  # Indica la fine dell'iterazione
-        self.length -= 1
+        return iter([self.head, self.head.next])
+   
         
     
     def add_node(self,data=""):  
