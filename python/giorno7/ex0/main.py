@@ -16,8 +16,11 @@ with open("Giorgia-ai-bootcamp-2025\python\giorno7\ex0\data.csv") as fd:
          return li[0]
      
      new_data = sorted(data[1:], key = sort_surname)
+     # Bonus
+    # Modificare il programma in modo che ordini i dati prima in base al
+    # cognome e poi al nome. Che chiave va usata?
      new_data_name = sorted(data[1:], key = sort_name)
-     print(new_data_name)
+     
 
 #      Stampi le righe ordinate aggiungendo il numero sequenziale (indice)  di ciascuna riga. 
      index = 0
