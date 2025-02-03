@@ -10,12 +10,13 @@ while True:
             print(f"Hai indovinato! Tentativi: {count}")
         elif x < x_ok:           
             print("Troppo basso")
-        elif x > x_ok:            
+        else:            
             print("Troppo alto")
         
 
     except ValueError:
         print("Input errato. Riprova.")
+        continue
         
 
 
