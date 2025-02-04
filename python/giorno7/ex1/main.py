@@ -39,8 +39,6 @@ try:
                     with open('Giorgia-ai-bootcamp-2025\python\giorno7\ex1\HighScore.csv','w',newline="") as fd:
                         writer = csv.writer(fd)
                         list_high_score.append([name_winner, int(high_score), f"Date: {datetime.datetime.now()}"])
-
-                        print(list_high_score)
                         sort_list = sorted(list_high_score,key= lambda li: li[1],reverse=True)
                         name_winner = sort_list[0][0]
                         
