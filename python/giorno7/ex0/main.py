@@ -13,7 +13,7 @@ with open("Giorgia-ai-bootcamp-2025\python\giorno7\ex0\data.csv") as fd:
      def sort_surname(li):
         return li[1]
      def sort_name(li):
-         return li[0]
+         return (li[0],li[1])
      
      new_data = sorted(data[1:], key = sort_surname)
      # Bonus
