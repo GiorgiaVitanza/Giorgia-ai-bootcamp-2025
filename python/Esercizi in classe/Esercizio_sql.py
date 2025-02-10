@@ -1,8 +1,10 @@
 import sqlite3
 import csv
 
-#Parte 1
-with open("Giorgia-ai-bootcamp-2025\python\Esercizi in classe\data.csv", encoding='utf-8') as fd:
+# Parte 1
+with open(
+    "Giorgia-ai-bootcamp-2025\python\Esercizi in classe\data.csv", encoding="utf-8"
+) as fd:
     reader = csv.reader(fd)
     saved_data = []
     for line in reader:
@@ -11,25 +13,25 @@ with open("Giorgia-ai-bootcamp-2025\python\Esercizi in classe\data.csv", encodin
 data = saved_data[1:]
 
 
-#Parte 2
+# Parte 2
 conn = sqlite3.connect("Giorgia-ai-bootcamp-2025\python\Esercizi in classe\my.db")
 cur = conn.cursor()
 
 cur.execute(
-    '''
+    """
     CREATE TABLE IF NOT EXISTS agents (
         id INTEGER PRIMARY KEY,
         QuotaAmount INTEGER,
         Month INTEGER,
         Agent TEXT,  
         Username TEXT
-    )''')
+    )"""
+)
 conn.commit()
 
 
 cur.executemany(
-    "INSERT INTO agents (QuotaAmount, Month, Agent, Username) VALUES (?, ?, ?, ?)",
-    data
+    "INSERT INTO agents (QuotaAmount, Month, Agent, Username) VALUES (?, ?, ?, ?)", data
 )
 conn.commit()
 
@@ -38,26 +40,27 @@ rows = cur.fetchall()
 for row in rows:
     print(row)
 
-cur.execute("SELECT Agent, SUM(QuotaAmount) "
-            "FROM agents "
-            "GROUP BY Agent "
-            "ORDER BY SUM(QuotaAmount) DESC")
+cur.execute(
+    "SELECT Agent, SUM(QuotaAmount) "
+    "FROM agents "
+    "GROUP BY Agent "
+    "ORDER BY SUM(QuotaAmount) DESC"
+)
 rows = cur.fetchall()
 for row in rows:
     print(row)
 
-cur.execute("SELECT Month, SUM(QuotaAmount) "
-            "FROM agents "
-            "GROUP BY Month "
-            "ORDER BY SUM(QuotaAmount) DESC")
+cur.execute(
+    "SELECT Month, SUM(QuotaAmount) "
+    "FROM agents "
+    "GROUP BY Month "
+    "ORDER BY SUM(QuotaAmount) DESC"
+)
 rows = cur.fetchall()
 for row in rows:
     print(row)
 
-cur.execute("SELECT Month, Agent, MAX(QuotaAmount) "
-            "FROM agents "
-            "GROUP BY Month "
-            )
+cur.execute("SELECT Month, Agent, MAX(QuotaAmount) FROM agents GROUP BY Month ")
 row = cur.fetchall()
 for row in rows:
     print(row)

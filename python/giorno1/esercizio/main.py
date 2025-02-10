@@ -1,7 +1,7 @@
 print("Inizio programma")
 
 # Assegno la variabile foo
-foo = False 
+foo = False
 
 # Questi controlli assert devono passare tutti
 assert bool(1)
@@ -31,10 +31,10 @@ message = b"hello" + b"world"
 
 # Creo una lista e la estendo
 li1 = [1, 2]
-li1.append(3),
+(li1.append(3),)
 
 # Non mi ricordo come si "prepende" un valore...
-li1.insert(0,0) 
+li1.insert(0, 0)
 
 # Verifico che il risultato sia quello che mi aspetto
 assert li1 == [0, 1, 2, 3]
@@ -42,7 +42,7 @@ assert li1 == [0, 1, 2, 3]
 # Creo una tupla e la estendo
 tu1 = (1, 2)
 
-tu1 = (tu1[0], tu1[1],3)
+tu1 = (tu1[0], tu1[1], 3)
 
 assert tu1 == (1, 2, 3)
 

@@ -2,8 +2,7 @@ class Country:
     def __init__(self, name):
         self.name = name
         self.region = []
-        
-        
+
     def add(self, reg):
         self.region.append(reg)
 
@@ -14,6 +13,7 @@ class Country:
         for reg in self.region:
             tot += reg.pop
         return tot
+
     @property
     def most_populuous_city(self):
         """The most populous city"""
@@ -25,14 +25,11 @@ class Country:
         for city in cities:
             data.append(city.pop)
 
-              
         for city in cities:
             if city.pop == max(data):
                 res = city
 
-        
         return res
-            
 
 
 class Region:
@@ -40,12 +37,10 @@ class Region:
         self.name = name
         self.city = []
         self.pop = 0
+
     def add(self, cities):
         self.city.append(cities)
         self.pop += cities.pop
-        
-        
-    
 
 
 class City:

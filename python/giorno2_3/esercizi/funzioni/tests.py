@@ -6,7 +6,7 @@ from main import (
     is_palindrome,
     sum_even_numbers,
     find_max,
-    count_vowels
+    count_vowels,
 )
 
 assert pow_list([1, 2, 3]) == [1, 4, 9], (
