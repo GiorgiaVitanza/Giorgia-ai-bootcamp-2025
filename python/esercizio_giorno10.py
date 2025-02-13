@@ -7,9 +7,7 @@ data_path = "Giorgia-ai-bootcamp-2025\python\WhiskyHunterData.json"
 with open(data_path,newline='') as fd:
     reader = pd.read_json(fd)
     df = pd.DataFrame(reader)
-print(df.head())
-#print(df.describe())
-#print(df.info())
+
 
 
 
